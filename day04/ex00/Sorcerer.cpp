@@ -22,10 +22,6 @@ Sorcerer::~Sorcerer() {
     std::cout << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same !" << std::endl;
 }
 
-std::string Sorcerer::getName() {
-    return this->_name;
-}
-
-std::string Sorcerer::getTitle() {
-    return this->_title;
+void Sorcerer::introduce() {
+    std::cout << "I am " << this->_name << ", " << this->_title << ", and I like ponies !" << std::endl;
 }

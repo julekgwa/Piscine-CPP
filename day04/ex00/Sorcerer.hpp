@@ -12,8 +12,7 @@ public:
     Sorcerer(Sorcerer const &);
     Sorcerer &operator=(Sorcerer const &);
     ~Sorcerer();
-    std::string getName(void);
-    std::string getTitle(void);
+    void introduce();
 private:
     std::string _title;
     std::string _name;

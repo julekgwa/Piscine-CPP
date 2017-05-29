@@ -5,5 +5,6 @@
 
 int main() {
     Sorcerer b("Junius", "Dev");
+    b.introduce();
     return 0;
 }
