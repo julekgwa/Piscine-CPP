@@ -12,11 +12,13 @@ public:
     Sorcerer(Sorcerer const &);
     Sorcerer &operator=(Sorcerer const &);
     ~Sorcerer();
-    void introduce();
+    std::string introduce(std::string);
+    std::string getName(void);
+    std::string getTitle(void);
 private:
     std::string _title;
     std::string _name;
 };
 
-
+std::ostream &operator<<(std::ostream &output, Sorcerer &sorcerer);
 #endif //PISCINE_CPP_SORCERER_HPP

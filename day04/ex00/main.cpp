@@ -4,7 +4,7 @@
 #include "Sorcerer.hpp"
 
 int main() {
-    Sorcerer b("Junius", "Dev");
-    b.introduce();
+    Sorcerer b("Junius", "C++ Dev");
+    std::cout << b << std::endl;
     return 0;
 }

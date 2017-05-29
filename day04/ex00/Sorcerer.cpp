@@ -5,7 +5,7 @@
 #include "Sorcerer.hpp"
 
 Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(title) {
-    std::cout << this->_name << ", " << this->_title << ", is born !" << std::endl;
+    std::cout << this->introduce("is born !") << std::endl;
 }
 
 Sorcerer::Sorcerer(Sorcerer const &obj) {
@@ -19,9 +19,14 @@ Sorcerer &Sorcerer::operator=(Sorcerer const &obj) {
 }
 
 Sorcerer::~Sorcerer() {
-    std::cout << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same !" << std::endl;
+    std::cout << this->introduce("is dead. Consequences will never be the same !") << std::endl;
 }
 
-void Sorcerer::introduce() {
-    std::cout << "I am " << this->_name << ", " << this->_title << ", and I like ponies !" << std::endl;
+std::string Sorcerer::introduce(std::string msg) {
+    return this->_name + ", " + this->_title + ", " + msg;
+}
+
+std::ostream &operator<<(std::ostream &output, Sorcerer &sorcerer) {
+    output << "I am " + sorcerer.introduce("and I like ponies !");
+    return output;
 }
