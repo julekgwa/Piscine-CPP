@@ -5,9 +5,16 @@
 #ifndef PISCINE_CPP_PEON_HPP
 #define PISCINE_CPP_PEON_HPP
 
+#include "Victim.hpp"
 
-class Peon {
-
+class Peon : public Victim {
+public:
+    Peon(std::string);
+    Peon(Peon const &);
+    Peon &operator=(Peon const &);
+    ~Peon();
+    void birth(void);
+    virtual void getPolymorphed() const;
 };
 
 

@@ -4,15 +4,15 @@
 
 #include "Victim.hpp"
 
-Victim::Victim(std::string name) : _name(name){
+Victim::Victim(std::string name) : _name(name) {
     this->birth();
 }
 
-Victim::Victim(Victim const &obj) : _name(obj._name){
+Victim::Victim(Victim const &obj) : _name(obj._name) {
 }
 
-Victim& Victim::operator=(Victim const &obj) {
-    this->_name=obj._name;
+Victim &Victim::operator=(Victim const &obj) {
+    this->_name = obj._name;
     return *this;
 }
 
@@ -34,6 +34,14 @@ std::string Victim::introduce() {
 
 void Victim::getPolymorphed() const {
     std::cout << this->_name << " has been turned into a cute little sheep !" << std::endl;
+}
+
+std::string Victim::getName() const {
+    return this->_name;
+}
+
+void Victim::setName(std::string name) {
+    this->_name = name;
 }
 
 std::ostream &operator<<(std::ostream &output, Victim &victim) {

@@ -12,11 +12,13 @@ public:
     Victim(std::string);
     Victim(Victim const &);
     Victim &operator=(Victim const &);
-    ~Victim(void);
+    virtual ~Victim(void);
     void birth(void);
     void death(void);
     std::string introduce(void);
-    void getPolymorphed() const;
+    virtual void getPolymorphed() const;
+    void setName(std::string name);
+    std::string getName(void) const;
 private:
     std::string _name;
 };
