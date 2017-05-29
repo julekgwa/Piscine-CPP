@@ -8,8 +8,7 @@ Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(ti
     std::cout << this->introduce("is born !") << std::endl;
 }
 
-Sorcerer::Sorcerer(Sorcerer const &obj) {
-    *this = obj;
+Sorcerer::Sorcerer(Sorcerer const &obj) : _name(obj._name), _title(obj._title){
 }
 
 Sorcerer &Sorcerer::operator=(Sorcerer const &obj) {
@@ -26,7 +25,11 @@ std::string Sorcerer::introduce(std::string msg) {
     return this->_name + ", " + this->_title + ", " + msg;
 }
 
+void Sorcerer::polymorph(Victim const &v) const {
+    v.getPolymorphed();
+}
+
 std::ostream &operator<<(std::ostream &output, Sorcerer &sorcerer) {
-    output << "I am " + sorcerer.introduce("and I like ponies !");
+    output << "I am " + sorcerer.introduce("and I like ponies !") << std::endl;
     return output;
 }
