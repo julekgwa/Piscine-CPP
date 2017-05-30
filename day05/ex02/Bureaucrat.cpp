@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &obj) : _name(obj._name), _grade(obj._gr
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj) {
-    (void)obj;
+    (void) obj;
     return *this;
 }
 
@@ -37,7 +37,18 @@ void Bureaucrat::signForm(Form &form) {
     if (form.isSigned())
         std::cout << this->_name << " signs " << form.getName() << std::endl;
     else
-        std::cout << this->_name <<" cannot sign " << form.getName() << " because " << "grade to sign is too low!";
+        std::cout << this->_name << " cannot sign " << form.getName() << " because " << "grade to sign is too low!";
+}
+
+void Bureaucrat::executeForm(Form const &form) const {
+    try {
+        form.execute(*this);
+        std::cout << "<" << _name << "> executes <" << form.getName() << ">" << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << "<" << _name << "> cannot execute <" << form.getName() << "> because <"
+                  << e.what() << ">" << std::endl;
+    }
 }
 
 void Bureaucrat::decreaseGrade() throw(GradeTooLowException) {

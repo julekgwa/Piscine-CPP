@@ -66,5 +66,5 @@ private:
 
 };
 
-
+std::ostream &operator<<(std::ostream &output, Form &form);
 #endif //PISCINE_CPP_FORM_HPP

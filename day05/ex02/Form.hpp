@@ -22,6 +22,7 @@ public:
     virtual ~Form() throw();
 
     void beSigned(Bureaucrat &);
+    virtual void execute(Bureaucrat const & executor) const;
 
     const std::string getName();
 
@@ -66,5 +67,5 @@ private:
 
 };
 
-
+std::ostream &operator<<(std::ostream &output, Form &form);
 #endif //PISCINE_CPP_FORM_HPP

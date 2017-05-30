@@ -10,8 +10,6 @@
 #include "Form.hpp"
 
 class Form;
-//class Form::GradeTooHighException;
-//class Form::GradeTooLowException;
 
 class Bureaucrat {
 public:
@@ -32,6 +30,7 @@ public:
     void increaseGrade() throw(GradeTooHighException);
 
     void signForm(Form &);
+    void executeForm(Form const & form) const;
 
     class GradeTooHighException : public std::exception {
     public:

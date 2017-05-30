@@ -51,6 +51,8 @@ int main(void) {
         Form f("Junius", 34, 34);
         f.beSigned(c);
         c.signForm(f);
+        std::cout << "\n\n---state of the form" << std::endl;
+        std::cout << f;
     }catch (Bureaucrat::GradeTooHighException &e) {
         std::cout << e.what() << std::endl;
     }catch (Bureaucrat::GradeTooLowException &e) {
