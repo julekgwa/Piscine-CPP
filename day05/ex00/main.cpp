@@ -12,7 +12,7 @@ int main(void) {
     }catch (Bureaucrat::GradeTooLowException &e){
         std::cout << e.what() << std::endl;
     }catch (Bureaucrat::GradeTooHighException &e) {
-        std::cout << "Exception thrown: " << e.what() << std::endl;
+        std::cout  << e.what() << std::endl;
     }
 
     try {
@@ -22,9 +22,9 @@ int main(void) {
         std::cout << "\n---Test 3 --- Grade increased by 1" << std::endl;
         b.increaseGrade();
     }catch (Bureaucrat::GradeTooLowException &e){
-        std::cout << "Exception thrown: " << e.what() << std::endl;
+        std::cout  << e.what() << std::endl;
     }catch (Bureaucrat::GradeTooHighException &e) {
-        std::cout << "Exception thrown: " << e.what() << std::endl;
+        std::cout  << e.what() << std::endl;
     }
 
     try {
@@ -34,9 +34,9 @@ int main(void) {
         std::cout << "\n---Test 5 --- Grade decreased by 1" << std::endl;
         b.decreaseGrade();
     }catch (Bureaucrat::GradeTooLowException &e){
-        std::cout << "Exception thrown: " << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }catch (Bureaucrat::GradeTooHighException &e) {
-        std::cout << "Exception thrown: " << e.what() << std::endl;
+        std::cout  << e.what() << std::endl;
     }
 
     Bureaucrat b(150, "Office");

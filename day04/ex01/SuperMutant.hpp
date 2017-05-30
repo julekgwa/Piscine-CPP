@@ -5,10 +5,18 @@
 #ifndef PISCINE_CPP_SUPERMUTANT_HPP
 #define PISCINE_CPP_SUPERMUTANT_HPP
 
+#include "Enemy.hpp"
 
-class SuperMutant {
+class SuperMutant : public Enemy
+{
+public:
 
+    SuperMutant(void);
+    ~SuperMutant(void);
+    SuperMutant(SuperMutant const & src);
+    SuperMutant     &operator=(SuperMutant const & rhs);
+
+    virtual void    takeDamage(int amount);
 };
 
-
-#endif //PISCINE_CPP_SUPERMUTANT_HPP
+#endif

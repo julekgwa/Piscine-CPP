@@ -5,26 +5,31 @@
 #ifndef PISCINE_CPP_AWEAPON_HPP
 #define PISCINE_CPP_AWEAPON_HPP
 
+#include <iostream>
 
-class AWeapon {
+class AWeapon
+{
+
+public:
+
+    AWeapon(void);
+    AWeapon(std::string const &name, int apcost, int damage);
+    ~AWeapon(void);
+    AWeapon(AWeapon const & src);
+    AWeapon &operator=(AWeapon const & rhs);
+
+    std::string const &    getName() const;
+
+    int             getAPCost(void) const;
+    int             getDamage(void) const;
+    virtual void    attack(void) const = 0;
+
 private:
     std::string _name;
-    int _apcost;
-    int _damage;
-public:
-    AWeapon(std::string const &name, int apcost, int damage);
-    AWeapon(AWeapon const &);
-    AWeapon &operator=(AWeapon const &);
-    virtual ~AWeapon();
-
-    std::string virtual getName() const;
-
-    int getAPCost() const;
-
-    int getDamage() const;
-
-    virtual void attack() const = 0;
+    int         _apcost;
+    int         _damage;
 };
 
+std::ostream &operator<<(std::ostream & o, AWeapon const &copy);
 
-#endif //PISCINE_CPP_AWEAPON_HPP
+#endif

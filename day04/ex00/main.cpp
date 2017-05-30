@@ -12,5 +12,13 @@ int main() {
     std::cout << robert << jim << joe;
     robert.polymorph(jim);
     robert.polymorph(joe);
+    std::cout << "===================================================" << std::endl;
+    std::cout << "--- My Tests ---" << std::endl;
+    {
+        Victim *tst = new Peon("Junius");
+        Victim &ref = *(tst);
+        robert.polymorph(ref);
+        delete tst;
+    }
     return 0;
 }

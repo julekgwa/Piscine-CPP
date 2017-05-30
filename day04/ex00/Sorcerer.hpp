@@ -9,8 +9,11 @@
 class Sorcerer {
 public:
     Sorcerer(std::string name, std::string title);
+
     Sorcerer(Sorcerer const &);
+
     Sorcerer &operator=(Sorcerer const &);
+
     ~Sorcerer();
     std::string introduce(std::string);
     std::string getName(void);
