@@ -9,7 +9,7 @@
 int main(int ac, char const *av[]) {
     if (ac == 2) {
         Convert a(av[1]);
-        std::cout << a << std::endl;
+        std::cout << a;
     }
     return 0;
 }

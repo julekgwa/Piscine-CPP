@@ -33,6 +33,9 @@ public:
     std::string getDoubleResult();
 
     std::string getFloatResult();
+    std::string getStrNumber(void);
+
+    int getINumber(void);
 
     void getCharResult();
     char getChar();
