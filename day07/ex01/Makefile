@@ -1,6 +1,6 @@
 NAME = iter
 FLAG = -Wall -Wextra -Werror -o
-SRC = main.cpp
+SRC = iter.cpp
 
 all:
 	@clang++ $(FLAG) $(NAME) $(SRC)

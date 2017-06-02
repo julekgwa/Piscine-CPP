@@ -5,14 +5,14 @@
 #include <iostream>
 #include <typeinfo>
 
-template<class T, class U, class F>
+template<typename T, typename U, typename F>
 void iter(T arr[], U len, F (*f)(T)) {
     for (int i = 0; i < len; ++i) {
         (*f)(arr[i]);
     }
 }
 
-template<class F>
+template<typename F>
 void print(F a) {
     std::cout << a << std::endl;
 }

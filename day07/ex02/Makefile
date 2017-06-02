@@ -1,6 +1,6 @@
 NAME = array
 FLAG = -Wall -Wextra -Werror -o
-SRC = main.cpp Array.hpp
+SRC = main.cpp
 
 all:
 	@clang++ $(FLAG) $(NAME) $(SRC)

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <exception>
 
-template<class T>
+template<typename T>
 class Array {
 public:
     Array<T>(void);
@@ -24,7 +24,7 @@ public:
 
     void *operator new(size_t t);
 
-    class Limit : public std::exception {
+    class Limit: public std::exception {
     public:
         virtual ~Limit() throw();
 

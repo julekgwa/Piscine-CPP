@@ -2,30 +2,31 @@
 // Created by julekgwa on 2017/06/01.
 //
 
-template <class T>
-//#include "Array.hpp"
+template<typename T>
 Array<T>::Array() : _size(0) {
     this->_array = NULL;
 }
 
-template <class T>
+template<typename T>
 Array<T>::Array(unsigned int n) : _size(n) {
     this->_array = new T[n];
 }
 
-//Array<T>::Array(Array<T> const &src) {
-//    *this = src;
-//}
-template <class T>
+template<typename T>
+Array<T>::~Array() {
+
+}
+
+template<typename T>
 Array<T>::Array(Array<T> const &src) {
     *this = src;
 }
 
-template <class T>
+template<typename T>
 Array<T> &Array<T>::operator=(Array<T> const &rhs) {
     if (this->_array != NULL)
         delete[] this->_array;
-    this->_size = rhs.length();
+    this->_size = rhs.size();
     this->_array = new T[this->_size];
     for (int i = 0; i < this->_size; ++i) {
         this->_array[i] = rhs[i];
@@ -33,46 +34,46 @@ Array<T> &Array<T>::operator=(Array<T> const &rhs) {
     return *this;
 }
 
-template <class T>
+template<typename T>
 T &Array<T>::operator[](int n) {
-    if (this->_size <= static_cast<unsigned int>(n)) {
+    if ((int)this->_size <= n) {
         throw Array<T>::Limit();
     } else
         return this->_array[n];
 }
 
-template <class T>
-unsigned int Array<T>::size(){
+template<typename T>
+unsigned int Array<T>::size() {
     return this->_size;
 }
 
-template <class T>
+template<typename T>
 Array<T>::Limit::Limit() {
 
 }
 
-template <class T>
+template<typename T>
 Array<T>::Limit::~Limit() throw() {
 
 }
 
-template <class T>
+template<typename T>
 Array<T>::Limit::Limit(Limit const &src) {
     *this = src;
 }
 
-template <class T>
-Array::Limit &Array<T>::Limit::operator=(Limit const &src) {
-    *this = src;
+template<typename T>
+typename Array<T>::Limit &Array<T>::Limit::operator=(Limit const &src) {
+    (void)src;
     return *this;
 }
 
-template <class T>
-const char* Array<T>::Limit::what() const throw() {
+template<typename T>
+const char *Array<T>::Limit::what() const throw() {
     return "Array out of bounds";
 }
 
-template <class T>
+template<typename T>
 void *Array<T>::operator new(size_t t) {
     return new T[t];
 }
